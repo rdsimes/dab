@@ -63,24 +63,21 @@ td {
   background-color: purple;
 }
 
-
 .hline {
- 
   width: 120px;
   height: 3px;
-
 }
 
 .vline {
   background-color: yellow;
-  height: 120px;  
+  height: 120px;
 }
 .box {
   border: 1px solid grey;
 }
 
 .dot {
-  border:5px solid black;
+  border: 5px solid black;
   height: 5px;
   width: 5px;
   border-radius: 10px;
