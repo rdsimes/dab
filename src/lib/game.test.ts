@@ -8,8 +8,7 @@ test('player can play turn', () => {
     expect(g.isPlayer1Turn).toBeFalsy();
     expect(debugGame(g)).toBe("({}),({}S)|({}),({}N)");
   });
-
-  
+    
   test('player2 can play turn', () => {
     var g = new Game(3, 3);
     g.play(1, 1, true);
