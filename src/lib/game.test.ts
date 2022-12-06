@@ -9,19 +9,6 @@ test('player can play turn', () => {
     expect(debugGame(g)).toBe("({}),({}S)|({}),({}N)");
   });
 
-  test('dodoo can be calculated',() => {
-
-    var result = dodoo(147);
-    expect(result).toBe("3×7×7");
-
-    result = dodoo(17);
-    expect(result).toBe("17");
-
-  });
-  
-  function dodoo(n: number) : string {
-    return "" + n;
-  }
   test('player can play turn', () => {
     var g = new Game(3, 3);
     var p = g.play(1, 1, true);
