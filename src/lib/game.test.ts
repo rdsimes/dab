@@ -4,21 +4,15 @@ import Box from './Box';
 
 test('player can play turn', () => {
     var g = new Game(3, 3);
-    var p = g.play(1, 1, true);
+    g.play(1, 1, true);
     expect(g.isPlayer1Turn).toBeFalsy();
     expect(debugGame(g)).toBe("({}),({}S)|({}),({}N)");
   });
 
-  test('player can play turn', () => {
-    var g = new Game(3, 3);
-    var p = g.play(1, 1, true);
-    expect(g.isPlayer1Turn).toBeFalsy();
-    expect(debugGame(g)).toBe("({}),({}S)|({}),({}N)");
-  });
   
   test('player2 can play turn', () => {
     var g = new Game(3, 3);
-    var p = g.play(1, 1, true);
+    g.play(1, 1, true);
     g.play(1, 0, true);
     expect(g.isPlayer1Turn).toBeTruthy();
     expect(debugGame(g)).toBe("({}),({}NS)|({}),({}N)");

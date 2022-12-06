@@ -36,8 +36,8 @@ class Game {
         let firstBoxScored: boolean = false;
         let secondBoxScored: boolean = false;
         if ((x > 0 && !isHorizontal) || (y > 0 && isHorizontal)){
-            var box = this.boxes[y -(isHorizontal?1:0)][x - (isHorizontal?0:1)];
-            if (box == undefined){
+            const box = this.boxes[y -(isHorizontal?1:0)][x - (isHorizontal?0:1)];
+            if (box === undefined){
                 console.log(x, y, isHorizontal, this.boxes);
             }
             if (isHorizontal){
@@ -52,11 +52,11 @@ class Game {
                 }
                 box.hasBorderE = true;         
             }
-            firstBoxScored = this.detectĀndSetScoringPlay(box);            
+            firstBoxScored = this.detectAndSetScoringPlay(box);            
         }
 
         if ((x < (this.rows - 1) && !isHorizontal) || (y < (this.columns - 1) && isHorizontal)){         
-            var box = this.boxes[y][x];           
+            const box = this.boxes[y][x];           
             if (isHorizontal){
                 if (box.hasBorderN){
                     return false;
@@ -68,7 +68,7 @@ class Game {
                 }
                 box.hasBorderW = true;           
             }
-            secondBoxScored = this.detectĀndSetScoringPlay(box); 
+            secondBoxScored = this.detectAndSetScoringPlay(box); 
                 
         }
         if (!(firstBoxScored || secondBoxScored)){
@@ -80,7 +80,7 @@ class Game {
 
     subscribe(rowIndex: number, colIndex: number, callback: (owner: string) => void) {
         let b = this.boxes[rowIndex][colIndex];
-        if (b != undefined){            
+        if (b !== undefined){            
             b.subscriber = callback;
         } else {
            // console.log(rowIndex, colIndex, this.boxes);
@@ -88,7 +88,7 @@ class Game {
     }
      
 
-    detectĀndSetScoringPlay(box: Box) {
+    detectAndSetScoringPlay(box: Box) {
         if (!box.hasBorderN || !box.hasBorderS || !box.hasBorderE || !box.hasBorderW) {
             return false;
         }

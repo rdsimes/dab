@@ -1,7 +1,6 @@
 import { FC, SetStateAction, useState } from 'react';
 import PlayerScores from './PlayerScores';
 import Game from '../lib/game'
-import { cp } from 'fs';
 
 const ROWS: number = 4;
 const COLUMNS: number = 5;
@@ -63,7 +62,7 @@ const Line: FC<LineProps> = (lineProps :LineProps) => {
   const [isPlayed, setIsPlayed] = useState(Boolean);
   let lineClass = "boxborder " + (lineProps.isHorizontal ? "hline" :"vline") + (isPlayed ? " played" : "");
   let click = () => {
-    let play = game.play(lineProps.colIndex ?? 0, lineProps.rowIndex, lineProps.isHorizontal);
+    game.play(lineProps.colIndex ?? 0, lineProps.rowIndex, lineProps.isHorizontal);
     if (isPlayed) {
       return;
     }
