@@ -63,6 +63,7 @@ const Line: FC<LineProps> = (lineProps :LineProps) => {
   let lineClass = "boxborder " + (lineProps.isHorizontal ? "hline" :"vline") + (isPlayed ? " played" : "");
   let click = () => {
     game.play(lineProps.colIndex ?? 0, lineProps.rowIndex, lineProps.isHorizontal);
+    
     if (isPlayed) {
       return;
     }
