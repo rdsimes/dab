@@ -5,7 +5,7 @@ import Game from "../lib/game";
 const ROWS: number = 4;
 const COLUMNS: number = 5;
 
-let game = new Game(COLUMNS, ROWS);
+const game = new Game(COLUMNS, ROWS);
 
 type ObjectRowProps = {
   rowIndex: number;
